@@ -8,7 +8,8 @@ function router(req, res) {
 
     switch (req.url) {
         case '/hi':
-            res.write("Hello !");
+            let greet = hi();
+            res.write(greet);
             res.end();
             break;
         default:
@@ -20,6 +21,10 @@ function router(req, res) {
     res.writeHead(201, { 'Content-Type': 'text/plain' });
 
     res.end();
+}
+
+function hi() {
+    return "Hello World!";
 }
 
 console.log("Listening on port 3000");
